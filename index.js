@@ -3,7 +3,7 @@ const createStore = redux.createStore;
 
 const CAKE_ORDERED = 'CAKE_ORDERED';
 
-// action
+// action creator
 function orderCake() {
     return {
         type: CAKE_ORDERED,
@@ -32,3 +32,11 @@ const reducer = (state = initialState, action) => {
 
 const store = createStore(reducer);
 console.log('initial state', store.getState());
+
+store.subscribe(() => {
+    console.log('update state', store.getState())
+})
+
+store.dispatch(orderCake())
+store.dispatch(orderCake())
+store.dispatch(orderCake())
