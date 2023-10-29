@@ -1,0 +1,14 @@
+{
+  "name": "redux-demo",
+  "version": "1.0.0",
+  "description": "demo starting from redux to redux toolkit to react-redux lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chandan",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^4.2.1"
+  }
+}
