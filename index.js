@@ -33,10 +33,13 @@ const reducer = (state = initialState, action) => {
 const store = createStore(reducer);
 console.log('initial state', store.getState());
 
-store.subscribe(() => {
+// the store.subscribe() return a function to unsubscribe from the store
+const unsubscribe = store.subscribe(() => {
     console.log('update state', store.getState())
 })
 
 store.dispatch(orderCake())
 store.dispatch(orderCake())
 store.dispatch(orderCake())
+
+unsubscribe()
