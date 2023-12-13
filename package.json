@@ -9,6 +9,7 @@
   "author": "chandan",
   "license": "ISC",
   "dependencies": {
+    "immer": "^10.0.3",
     "redux": "^4.2.1"
   }
 }

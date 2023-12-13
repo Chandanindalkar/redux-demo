@@ -93,7 +93,6 @@ const unsubscribe = store.subscribe(() => {
 // store.dispatch(orderCake())
 // store.dispatch(orderCake())
 // store.dispatch(orderCake())
-
 // store.dispatch(restockCake(5))
 
 const actions = bindActionCreators(
