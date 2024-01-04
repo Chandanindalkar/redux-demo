@@ -7,12 +7,13 @@ const applyMiddleware = redux.applyMiddleware;
 const reduxLogger = require('redux-logger');
 const logger = reduxLogger.createLogger()
 
+// actions types
 const CAKE_ORDERED = 'CAKE_ORDERED';
 const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
 const ICECREAM_ORDERED = 'ICECREAM_ORDERED';
 const ICECREAM_RESTOCKED = 'ICECREAM_RESTOCKED';
 
-// action creator
+// action creators
 function orderCake() {
     return {
         type: CAKE_ORDERED,
@@ -101,6 +102,7 @@ const actions = bindActionCreators(
     {
         orderCake, restockCake, orderIceCream, restockIceCream
     }, store.dispatch)
+
 actions.orderCake()
 actions.orderCake()
 actions.orderCake()
