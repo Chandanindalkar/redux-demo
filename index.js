@@ -77,11 +77,19 @@ const iceCreamReducer = (state = initialIceCreamState, action) => {
                 ...state,
                 numOfIceCreams: state.numOfIceCreams + action.payload,
             }
+        // buy one cake get one icecream free
+        case CAKE_ORDERED: // listens to other action types
+            // acts on its own state
+            return {
+                ...state,
+                numOfIceCreams: state.numOfIceCreams - 1,
+            }
         default:
             return state
     }
 }
 
+// to combine multiple reducers into one to be passed to the store
 const rootReducer = combineReducers({
     cakes: cakeReducer, 
     icecreams: iceCreamReducer,
@@ -105,7 +113,7 @@ const actions = bindActionCreators(
 
 actions.orderCake()
 actions.orderCake()
-actions.orderCake()
+actions.orderCake() 
 actions.restockCake(5)
 actions.orderIceCream()
 actions.orderIceCream()

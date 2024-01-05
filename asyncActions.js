@@ -71,9 +71,9 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-const usernameExtractor = (singleUser) => {
-    return singleUser.name
-}
+// const usernameExtractor = (singleUser) => {
+//     return singleUser.name
+// }
 
 const fetchUsers = () => {
     return function(dispatch) {
@@ -81,7 +81,8 @@ const fetchUsers = () => {
         axios
             .get('https://jsonplaceholder.typicode.com/users')
             .then(response => {
-                const users = response.data.map( user => usernameExtractor(user)) //try json manipulation
+                // const users = response.data.map( user => usernameExtractor(user)) //try json manipulation
+                const users = response.data.map( user => user.name) //try json manipulation
                 dispatch(fetchUsersSucceeded(users));
             })
             .catch( error => {
